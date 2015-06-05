@@ -1,0 +1,113 @@
+@import "./base";
+.base();
+.base-normalize();
+
+html {
+    body {
+        font-size: 13px;
+        height: 100vh; // IE9+ 响应式最好支持方式
+    }
+
+    * {
+        font-family: @default-base-font-family, 'Microsoft Yahei', '微软雅黑';
+    }
+
+    p {
+        margin: 0;
+    }
+
+    ul, ol, dl,
+    form, fieldset, legend, input, textarea, button, {
+        margin: 0;
+        padding: 0;
+    }
+
+    dd {
+        margin-start: 0;
+        -webkit-margin-start: 0;
+        -moz-margin-start: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+    }
+
+    a {
+        color: @default-color-link;
+        &:link,
+        &:visited {
+            text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+            text-decoration: underline;
+        }
+    }
+}
+
+.ui-inline,
+.inline_block {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+    /*vertical-align: middle;*/
+}
+
+.hide {
+    display: none!important;
+}
+
+// 定义loading样式
+.loadng {
+    background: url('../img/loading.gif') no-repeat;
+    border: none;
+    display: inline-block;
+    min-height: 16px;
+    min-width: 16px;
+    padding-left: 18px;
+    line-height: 16px;
+}
+#main > .loading {
+    margin: 7px 19px;
+}
+
+.not-allowed {
+    .base > .not-allowed();
+}
+
+.not-allowed-href {
+    .base > .not-allowed-href();
+}
+
+.ellipsis {
+    .base > .ellipsis();
+}
+
+/**
+ * 加载样式
+ */
+
+.loadng {
+    background: url('../img/loading.gif') no-repeat;
+    border: none;
+    display: inline-block;
+    min-height: 16px;
+    min-width: 16px;
+    padding-left: 18px;
+    line-height: 16px;
+}
+#main > .loading {
+    margin: 7px 19px;
+}
+
+.performance-header {
+    padding: 0 15px;
+    line-height: 32px;
+    background-color: #204C89;	
+	font-size: 1em;
+	color: #91A9CB;
+}
+@import "./dep";

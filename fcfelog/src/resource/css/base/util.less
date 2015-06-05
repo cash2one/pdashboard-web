@@ -1,0 +1,133 @@
+//
+// Util
+// -------------------------------------------------
+//
+// ### Usage:
+// 提供简便的mixin工具。
+//
+// ### Example:
+// .some-floats-inside {
+//     .clearfix();
+// };
+
+@import 'variables';
+
+.clearfix() {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// size settings
+.size(@size) {
+    width: @size;
+    height: @size;
+}
+
+.size(@wdith, @height) {
+    width: @wdith;
+    height: @height;
+}
+
+//
+// .no-bullet
+// .no-bullets
+//
+// 去掉列表的样式，no-bullet针对li标签，no-bullets针对ul和ol标签
+
+.no-bullet() {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+}
+
+.no-bullets() {
+    list-style: none;
+    li {
+        .no-bullet();
+    }
+}
+
+// 带图标线性渐变背景
+// @direction 渐变方向
+// @fromColor 起始颜色
+// @endColor 终止颜色
+// @backgroundImage 背景前的第二背景图
+// @repeatType 重叠方式
+// @positionX x轴偏移
+// @positionY y轴偏移
+// @backgroundColor 背景色
+.gradient-with-image(
+  @direction:top,
+  @fromColor,
+  @endColor,
+  @backgroundImage:"",
+  @positionX:0, @positionY:0,
+  @backgroundColor:transparent,
+  @repeatType:no-repeat) {
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY
+  @backgroundColor;
+  // Safari 4-5, Chrome 1-9
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY,
+  -webkit-gradient(linear, @direction, from(@fromColor), to(@endColor));
+  // Safari 5.1, Chrome 10+
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY,
+  -webkit-linear-gradient(@direction, @fromColor, @endColor);
+  // Firefox 3.6+
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY,
+  -moz-linear-gradient(@direction, @fromColor, @endColor);
+  // IE 10
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY,
+  -ms-linear-gradient(@direction, @fromColor, @endColor);
+  // Opera 11.10+
+  background: url(@backgroundImage) @repeatType scroll @positionX @positionY,
+  -o-linear-gradient(@direction, @fromColor, @endColor);
+}
+
+.gradient(@startColor: #EEE, @endColor: white) {
+    background-color: @startColor;
+    background: -webkit-gradient(linear, left top, left bottom
+        , from(@startColor), to(@endColor));
+    background: -webkit-linear-gradient(top, @startColor, @endColor);
+    background: -moz-linear-gradient(top, @startColor, @endColor);
+    background: -ms-linear-gradient(top, @startColor, @endColor);
+    background: -o-linear-gradient(top, @startColor, @endColor);
+}
+.box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.horizontal-gradient(@startColor: #EEE, @endColor: white) {
+    background-color: @startColor;
+    background-image: -webkit-gradient(linear, left top, right top
+        , from(@startColor), to(@endColor));
+    background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+    background-image: -moz-linear-gradient(left, @startColor, @endColor);
+    background-image: -ms-linear-gradient(left, @startColor, @endColor);
+    background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.word-break() {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.not-allowed() {
+    cursor: not-allowed;
+}
+
+.not-allowed-href() {
+    .not-allowed;
+    color: #999;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

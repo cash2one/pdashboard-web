@@ -1,0 +1,60 @@
+//
+// Reset
+// -------------------------------------------------------------------
+// 
+// ### Reference:
+//  * http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+//  * http://compass-style.org/reference/compass/reset/utilities/
+
+.reset-box-model() {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.reset-focus() {
+    outline: 0;
+}
+
+.reset-font() {
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.reset-body() {
+    line-height: 1;
+}
+
+.reset-table() {
+    border-collapse: separate;
+    border-spacing: 0;
+    vertical-align: middle;
+}
+
+.reset-table-cell() {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.reset-list-style() {
+    list-style: none;
+}
+
+.reset-html5() {
+    article, aside, canvas, details, figcaption,
+    figure, footer, header, hgroup, menu, nav,
+    section, summary, main {
+        .reset-box-model;
+        display: block;
+    }
+    audio, canvas, video {
+        display: inline-block;
+    }
+    audio:not([controls]),[hidden] {
+        display: none;
+    }
+}

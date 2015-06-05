@@ -1,0 +1,83 @@
+//
+// Typography
+//
+// ### Usage:
+// 提供最基础的文本相关的mixin样式。
+
+@import "util.less";
+
+// .base-font-family
+
+.font-family(base) {
+    font-family: @default-base-font-family;
+}
+.font-family(heading) {
+    font-family: @default-heading-font-family;
+}
+.font-family(code) {
+    font-family: @default-code-font-family;
+}
+
+// .ellipsis
+// 
+// Known issue:
+// 指定参数（行数）的功能只支持WebKit。
+
+.ellipsis(...) {
+    overflow: hidden;
+}
+.ellipsis() {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.ellipsis(@line-number) {
+    display: -webkit-box;
+    -webkit-line-clamp: @line-number;
+    -webkit-box-orient: vertical;  
+}
+
+// force-wrap
+//
+// 阻止长字符串（例如url或无意义连续英文字符）打破布局
+
+.force-wrap() {
+    white-space: pre-line;      // CSS 3.0
+    white-space: -moz-pre-wrap; // Mozilla
+}
+
+// .invisible
+//
+// 用于隐藏那些增加可访问性的文字，注意与hide-text的区别是，他隐藏整个元素
+
+.invisible() {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+// .hover-link
+//
+// 实现链接默认无下划线，hover后有下划线的样式
+
+.hover-link() {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// .unstyled-link
+//
+// 将链接变成默认的文字样式
+
+.unstyled-link() {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}

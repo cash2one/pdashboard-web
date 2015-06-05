@@ -1,0 +1,70 @@
+<fc-component name="fc-performance-line-chart" action="entry/fe/management/plan/component/performance" data-db="testa">
+    <template>
+        <section class="chart-section">
+            <h3>${page}性能展示</h3>
+            <section class="select-opition">
+                <!-- import: fc-performance-opition-position -->
+                <!-- import: fc-performance-opition-date -->
+                <!-- import: fc-performance-opition-tagname -->
+            </section>
+            <!-- for: ${echart-node} as ${node} -->
+                <div class="echartCon" data-db="${node.db}" data-text="${node.text}"></div>
+            <!-- /for -->
+            </section>
+    </template>
+</fc-component>
+
+<!-- target: fc-performance-opition-position -->
+<div data-ui-type="BoxGroup" data-ui-id="select-position"
+    data-ui-name="select-position" data-ui-box-type="radio"
+    data-ui-orientation="horizontal" class="select-position">
+    <ul>
+        <!-- for: ${select-opition-position} as ${opition} -->
+        <li>
+            <input type="radio" id="${opition.id}" name="select-position" value="${opition.value}" 
+            <!-- if: ${opition.check} -->
+                checked="${opition.check}" 
+            <!-- /if -->
+            />
+            <label for="${opition.id}">${opition.text}</label>
+        </li>
+        <!-- /for -->
+    </ul>
+</div>
+
+<!-- target: fc-performance-opition-date -->
+<div data-ui-type="BoxGroup" data-ui-id="select-date"
+    data-ui-name="select-date" data-ui-box-type="checkbox"
+    class="select-date-compare">
+    <ul>
+        <!-- for: ${select-opition-date} as ${opition} -->
+        <li>
+            <input type="checkbox" id="${opition.id}" name="select-date" value="${opition.value}" 
+            <!-- if: ${opition.check} -->
+                checked="${opition.check}" 
+            <!-- /if -->
+            />
+            <label for="${opition.id}">${opition.text}</label>
+        </li>
+        <!-- /for -->
+    </ul>
+</div>
+
+<!-- target: fc-performance-opition-tagname -->
+<div data-ui-type="BoxGroup" data-ui-id="select-tagname"
+    data-ui-name="select-tagname" data-ui-box-type="checkbox"
+    class="select-tagname">
+    <ul>
+        <!-- for: ${select-opition-pname} as ${opition} -->
+        <li>
+            <input type="checkbox" id="${opition.id}" name="select-tagname" value="${opition.value}" checked="checked"
+            <!-- if: ${opition.check} -->
+                checked="${opition.check}" 
+            <!-- /if -->
+            />
+            <label for="${opition.id}">${opition.text}</label>
+        </li>
+        <!-- /for -->
+    </ul>
+    
+</div>

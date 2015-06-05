@@ -1,0 +1,44 @@
+@import "./color";  // 引入当前名字空间下的color
+
+.style-border (@size: 1px, @color: #000, @style: solid) {
+    border: @size @color @style;
+}
+.style-button() {
+    background: url('../../img/bg_repeat_x.png') repeat-x 0 -10px;
+    border: 1px solid #999;
+    color: #000;
+    font-size: 13px;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    text-decoration: none;
+    .style-inlineblock();
+    &:link, &:visited {
+        text-decoration: none;
+    }
+    &:hover, &:active {
+        border: 1px solid #bbb;
+        text-decoration: none;
+    }
+}
+.style-clickable() {
+    cursor: pointer;
+    text-decoration: none;
+    .color-link();
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.style-ellipsis() {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.style-inlineblock() {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}

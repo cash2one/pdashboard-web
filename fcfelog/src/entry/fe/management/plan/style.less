@@ -1,0 +1,118 @@
+
+.entry-management-plan {
+    padding: 15px;
+    nav {
+        font-weight: 700;
+        margin: 0 5px 20px;
+        a {
+            float: left;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        a.nav-current {
+            border-bottom: 2px solid #204C89;
+        }
+        &:after{
+            display: table;
+            clear: both;
+            content: '';
+        }
+    }
+    .page-nav {
+        margin: 0 5px 20px;
+        font-size: 3em;
+        font-weight: 700;
+        color: #4281ed;
+        i.fa {
+            float: left;
+        }
+        a {
+            font-size: .6em;
+            margin-left: 20px;
+            margin-right: 20px;
+            line-height: 34px;
+        }
+    }
+    .model-nav {
+        padding-left: 40px;
+        font-size: 1.2em;
+        color: #4281ed;
+        a {
+            font-size: .6em;
+            margin-left: 25px;
+            line-height: 24px;
+        }
+    }
+    .select-date {
+        clear: both;
+        .date-select-title {
+            margin : 0;
+            padding-left : 4px;
+            padding-right : 10px;
+            font-weight : bold;
+            font-size : 0.8em;
+            line-height : 26px;
+            float : left;
+        }
+        #rangeTime 
+        {
+            float : left;
+        }
+        &:after{
+            display: table;
+            clear: both;
+            content: '';
+        }
+    }
+    .chart-section{
+        margin: 10px;
+        h3 {
+            padding-bottom: 15px;
+            line-height: 20px;
+            font-size: 1.2em;
+        }
+        .select-opition {
+            margin-bottom: 10px;
+            .select-position {
+                width : 30%;
+            }
+            .select-date-compare {
+                width: 20%;
+                display: none;
+            }
+            .select-tagname {
+                width: 40%;
+                display: none;
+            }
+            & > div {
+                float: left;
+            }
+            &:after{
+                display: table;
+                clear: both;
+                content: '';
+            }
+        }
+    }
+
+    .charts {
+        margin: 30px 0;
+        padding: 0;
+        .echartCon {
+            height: 500px;
+            clear: both;
+            .center {
+                text-align: center;
+                font-size: 32px;
+                line-height: 500px;
+            }
+        }
+        & > div {
+            margin: 0 0 30px 0;
+        }
+    }
+    & > div {
+        margin: 15px 0;
+    }
+}

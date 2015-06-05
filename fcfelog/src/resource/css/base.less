@@ -1,0 +1,54 @@
+// @file less 基础工具入口文件
+//
+// @author Liandong Liu (liuliandong01@baidu.com)
+//
+// 导入基础依赖的样式方法
+// 严格限制修改base文件夹及base.less文件
+// 要用到base工具方法时；必须通过base.less 进行使用
+//
+// 注意不要让base有任何的实质输出
+
+// 全局变量；严格限制添加
+@import "./variable";
+
+.base {
+    @import "./base/typography.less";
+    @import "./base/reset.less";
+    @import "./base/util.less";
+    @import "./base/fixUrl.less";
+    @import "./base/color.less";
+    @import "./base/style.less";
+}
+
+// 重置页面
+.base-normalize() {
+    @import "./base/global-reset.less";
+    .global-normalize();
+}
+
+// 工具类base
+// ------------ 使用方法 -----
+// 局部作用域导入 : 如果当前域有多个工具方法需要使用
+// #header {
+//     .base();
+//     ul {
+//         .reset-box-model;
+//         .reset-list-style;
+//     }
+
+//     li {
+//         .reset-box-model;
+//         .reset-list-style;
+//     }
+//     a {
+//         .unstyled-link;
+//     }
+// }
+//
+// 命名空间导入方法: 如果只有一个或少量方法需要使用
+// .app-wrapper {
+//     .base > .size(100, 120);
+//     .clearfix {
+//         .base > clearfix();   
+//     }
+// }

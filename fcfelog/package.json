@@ -1,0 +1,45 @@
+{
+    "name": "output",
+    "version": "0.0.1",
+    "description": "edp project",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "edp": {
+        "wwwroot": "/",
+        "depDir": "dep",
+        "srcDir": "src",
+        "loaderAutoConfig": "js,htm,html,tpl,vm,phtml",
+        "loaderUrl": "http://s1.bdstatic.com/r/www/cache/ecom/esl/1-8-2/esl.js",
+        "dependencies": {
+            "echarts": "2.x",
+            "eoo": "~0.1.1",
+            "er": "~3.1.0-beta.5",
+            "esui": "~3.1.0-beta.3",
+            "etpl": "~3.0.0",
+            "mini-event": "~1.0.2",
+            "moment": "~2.7.0",
+            "underscore": "~1.5.2",
+            "zrender": "2.x",
+            "font-awesome": "~4.2.0",
+            "fc-ajax": "~0.0.1",
+            "fc-core": "~0.0.1-alpha.7",
+            "promise": "~1.0.2",
+            "ef": "~3.1.0",
+            "mockservice": "~",
+            "fc-component-ria": "~0.0.1-alpha.7",
+            "emc": "~1.0.0",
+            "fc-icon": "~0.0.6",
+            "fc-view": "~0.0.1-alpha.17",
+            "fcui": "~0.0.2-alpha.14",
+            "fc-storage": "~0.0.1-alpha.6",
+            "fc-flag": "~0.0.1-alpha.4"
+        }
+    },
+    "dependencies": {},
+    "author": "gushouchuang@baidu.com",
+    "repository": "http://gitlab.baidu.com/gushouchuang/pdashboard-web.git",
+    "license": "BSD",
+    "readme": "README"
+}

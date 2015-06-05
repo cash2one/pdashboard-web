@@ -1,0 +1,14 @@
+{
+    "LICENSE": "94984eb5a843ce1d48e7cd40996a667c",
+    "README.md": "816ec3fe914eb0c3c6a1d69e1ac65b54",
+    "src\\AjaxRequest.js": "243f1d55a4a0ef8c1a53e506971ca2fd",
+    "src\\ajax.js": "30559d3fc1d5ba2a8f04f83e67ff804f",
+    "src\\config.js": "75ec9018af35d90e621be07dc93f56d9",
+    "src\\globalData.js": "c38ed12b66eea3896c4899614de7dc6d",
+    "src\\hooks.js": "4bc97f07208436235cc11e59fa73c7ae",
+    "src\\main.js": "16451fee1bfdb05b08c97e48b13b77c6",
+    "src\\request.js": "7d222994547424782ad63b7d0d1eb595",
+    "src\\status.js": "ccaccd98d249c3f8b02acbadc21adccf",
+    "jsduck\\meta\\AjaxOption.js": "3263e76b69a967a2c29e41095135f567",
+    "package.json": "d9ba0f90592e4a366264b436280f6c6e"
+}

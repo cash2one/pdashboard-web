@@ -1,0 +1,224 @@
+/**
+ * FCUI Table 皮肤，表格的基本皮肤。
+ * @author Han Bing Feng (hanbingfeng@baidu.com)
+ */
+// FCUI Table的DOM结构
+// div.ui-table
+//   table.ui-table-table
+//     thead.ui-table-thead
+//       th.ui-table-hcell
+//         div.ui-table-hcell-text
+//         div.ui-table-hcell-extra
+//     tbody.ui-table-tbody
+//       tr.ui-table-row
+//         td.ui-table-cell
+//           div.ui-table-cell-text
+//           div.ui-table-cell-extra
+
+/**
+ * 设置table单元格样式
+ * &指代 ui-table-cell，ui-table-hcell, ui-table-fcell
+ */
+.set-cells() {
+    padding: 0;
+    &:first-child {
+        // 第一个单元格有左边框
+        border-left: 1px solid @skin-fc-border-color-light;
+    }
+
+    &:last-child {
+        // 最后一个单元格有右边框
+        border-right: 1px solid @skin-fc-border-color-light;        
+    }
+
+    &-text {
+        height: auto;
+        //  行高16px，需要一行的情况下行高39px，余23px。
+        line-height: 16px;
+        padding: 12px 5px 11px;
+        color: @skin-fc-text-color-gray-dark;
+
+        a:hover {
+            color: @skin-fc-text-color-blue;
+            text-decoration: none;
+        }
+    }
+
+    &-align-left {
+        text-align: left;
+    }
+
+    &-align-right {
+        text-align: right;
+    }
+
+    &-align-center {
+        text-align: center;
+    }
+
+    &-align-justify {
+        text-align: justify;
+    }
+}
+
+/**
+ * 设置table表头区域样式。
+ * &指代 ui-table
+ */
+.set-table-head() {
+    &-thead {
+        border-top: 2px solid @skin-fc-shadow-color;
+        border-bottom: 1px solid @skin-fc-shadow-color;
+
+        tr {
+            .ui-table-hcell {
+                .set-cells();
+                font-weight: bold;
+                vertical-align: top;
+                background: @skin-fc-bg-color-gray-light;
+            }
+        }
+    }
+}
+
+/**
+ * 设置table表格体区域样式。
+ * &指代 ui-table
+ */
+.set-table-body() {
+    &-tbody {
+        background: @skin-fc-bg-color-white;
+
+        .ui-table-row {
+            border-bottom: 1px solid @skin-fc-border-color-light;
+
+            &:hover {
+               background: @skin-fc-bg-color-hover-blue; 
+            }
+
+            &-selected {
+                background: @skin-fc-bg-color-selected;
+            }
+
+            .ui-table-cell {
+                .ui-table-cell {
+                    &-max-width {
+                        overflow: hidden;
+                    }
+
+                    &-text {
+                        a {
+                            color: @skin-fc-text-color-blue-dark;
+                        }
+                    }                    
+                }
+
+                .set-cells();
+
+                &-sorted {
+                    background: @skin-fc-bg-color-selected;
+                }
+            }
+
+            &-summary {
+                .ui-table-cell {
+                    background-color: @skin-fc-bg-color-gray-light;
+                    &-text {
+                        padding: 12px 5px;
+                        font-weight: bold;
+                        font-size: 12px;
+                        color: #333;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * 设置table表格尾区域样式
+ * &指代 ui-table
+ */
+.set-table-foot() {
+    &-tfoot {
+        background: @skin-fc-bg-color-white;
+        border-bottom: 2px solid @skin-fc-shadow-color;
+        .ui-table-foot-row {
+            &:hover {
+                background: @skin-fc-bg-color-hover-blue;
+            }
+            .ui-table-fcell {
+                .set-cells();
+            }
+        }
+    }
+}
+
+.ui-table {
+    overflow-x: auto;
+    
+    &-has-max-height {
+        overflow-y: auto;
+        position: relative;
+        padding-bottom: 1px;
+    }
+
+    &-has-vborder {
+        .ui-table-col {
+            border-right: 1px solid @skin-fc-border-color-light;
+        }
+    }
+
+    &-no-foot {
+        .ui-table-tbody {
+            border-bottom: 2px solid @skin-fc-shadow-color;
+        }
+    }
+
+    &-no-head {
+        .ui-table-tbody {
+            border-top: 2px solid @skin-fc-shadow-color;
+        }
+    }
+
+    .ui-table {
+        &-table,
+        &-cover-table {
+            table-layout: auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .set-table-head();
+        .set-table-body();
+        .set-table-foot();
+    }
+
+    &-has-max-height {
+        .ui-table-cover-table {
+            table-layout: fixed;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &-fix-head {
+        .ui-table-cover-table {
+            &-wrapper {
+                position: absolute;
+                display: none;
+            }
+
+            &-fixing {
+                display: block;
+            }
+        }
+    }
+
+    &-head-fixing {
+        .ui-table-cover-table {
+            display: table;
+        }
+    }
+}
